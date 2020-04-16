@@ -13,13 +13,13 @@ test('missing property errors', t => {
   t.throws(() => {
     jsonfeedToRSS({
       version: 'https://jsonfeed.org/version/1',
-      feed_url: 'https://jsonfeed.org/feed.json'
+      feed_url: 'https://api.covid19india.org/website_data.json'
     })
   }, /missing title/, 'Missing titles throw')
 
   t.throws(() => {
     jsonfeedToRSS({
-      feed_url: 'https://jsonfeed.org/feed.json',
+      feed_url: 'https://api.covid19india.org/website_data.json',
       title: 'A feed title'
     })
   }, /version 1 required/, 'Missing version throw')
@@ -34,7 +34,7 @@ test('missing property errors', t => {
   t.throws(() => {
     jsonfeedToRSS({
       version: 'https://jsonfeed.org/version/1',
-      feed_url: 'https://jsonfeed.org/feed.json',
+      feed_url: 'https://api.covid19india.org/website_data.json',
       title: 'A feed title'
     })
   }, /missing home_page_url/, 'Missing home_page_url throw')
